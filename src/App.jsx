@@ -5,11 +5,20 @@
     -> Hostory
 */
 
+import { useState } from "react";
+
 // Square Function ->
 
-function Square({value}){
+function Square(){
+
+  const [value, setValue] = useState(null);
+  
+  function handleClick(){
+    setValue('X')
+    }
+
   return (
-    <button className="bg-white border border-gray-400 h-12 w-12 m-1 leading-9 text-xl">
+    <button onClick={handleClick} className="bg-white border border-gray-400 h-12 w-12 m-1 leading-9 text-xl">
       {value}
     </button>
   );
@@ -18,20 +27,20 @@ function Square({value}){
 export default function Board() {
   return (
     <>
-      <div>
-        <Square value="X" />
-        <Square value="X" />
-        <Square value="X" />
+      <div className="flex">
+        <Square />
+        <Square />
+        <Square />
       </div>
-      <div>
-        <Square value="X" />
-        <Square value="X" />
-        <Square value="X" />
+      <div className="flex">
+        <Square />
+        <Square />
+        <Square />
       </div>
-      <div>
-        <Square value="X" />
-        <Square value="X" />
-        <Square value="X" />
+      <div className="flex">
+        <Square />
+        <Square />
+        <Square />
       </div>
     </>
   );
